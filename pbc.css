@@ -1,0 +1,167 @@
+/* CSS Variables for Colour Palette */
+:root {
+    --sage-green: #9DC183;
+    --storm-grey: #778899;
+    --light-grey: #f4f4f4;
+    --dark-grey: #333;
+  }
+  
+  /* Global Styles */
+  * {
+    box-sizing: border-box;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: var(--light-grey);
+    color: var(--dark-grey);
+  }
+  
+  /* Navigation Styling */
+  nav {
+    background: var(--storm-grey);
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 15px;
+  }
+  
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, transform 0.3s;
+  }
+  
+  nav ul li a:hover {
+    color: var(--sage-green);
+    transform: scale(1.1);
+  }
+  
+  /* 🚅 Bullet Train Track */
+  .train-track {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    overflow: hidden;
+    background: linear-gradient(90deg, var(--storm-grey), var(--sage-green));
+    border-bottom: 3px solid var(--dark-grey);
+  }
+  
+  /* 🚅 Bullet Train */
+  .train {
+    position: absolute;
+    top: 10px;
+    left: -200px;  /* Starts off-screen */
+    width: 150px;
+    height: 40px;
+    background: url('bullet.png') no-repeat center/contain;
+    animation: moveTrain 10s linear infinite;
+    transition: transform 0.3s;
+  }
+  
+  .train:hover {
+    transform: scale(1.1);
+  }
+  
+  /* 🚄 Train Animation */
+  @keyframes moveTrain {
+    from {
+      left: -200px;  /* Start off-screen */
+    }
+    to {
+      left: 100%;  /* Move across the screen */
+    }
+  }
+  
+  /* Section Styling */
+  section {
+    padding: 50px 20px;
+    text-align: center;
+    background: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    opacity: 0;
+    animation: fadeInAnimation 1s forwards;
+  }
+  
+  section.fade-in {
+    animation-delay: 0.5s;
+  }
+  
+  /* List Styling */
+  section ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  section ul li {
+    font-size: 1.2em;
+    margin: 10px 0;
+    transition: color 0.3s;
+  }
+  
+  section ul li:hover {
+    color: var(--sage-green);
+  }
+  
+  /* Footer Styling */
+  footer {
+    background: var(--storm-grey);
+    color: #fff;
+    text-align: center;
+    padding: 1em;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+  }
+  
+  /* Fade In Animation */
+  @keyframes fadeInAnimation {
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Back-to-Top Button */
+  .back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--sage-green);
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    transition: background 0.3s, transform 0.3s;
+  }
+  
+  .back-to-top:hover {
+    background: var(--storm-grey);
+    transform: scale(1.1);
+  }
+  
